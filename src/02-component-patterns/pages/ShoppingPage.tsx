@@ -4,6 +4,7 @@ import {
   ProductButtons,
   ProductCard,
 } from "../components/";
+import "../styles/custom-styles.css";
 
 const product = {
   id: "1",
@@ -25,14 +26,27 @@ const ShoppingPage = () => {
         }}
       >
         <ProductCard product={product}>
-          <ProductCard.Image />
-          <ProductCard.Title title={"holissss"} />
+          <ProductCard.Image className="custom-image" activeClass="holi" />
+          <ProductCard.Title title={"holissss"} className="text-white" />
           <ProductCard.Buttons />
         </ProductCard>
-        <ProductCard product={product}>
-          <ProductImage />
-          <ProductTitle />
-          <ProductButtons />
+        <ProductCard product={product} className="bg-dark">
+          <ProductImage className="custom-image" activeClass="holi" />
+          <ProductTitle className="text-white" />
+          <ProductButtons
+            className="custom-buttons"
+            style={{ display: "flex", justifyContent: "end" }}
+          />
+        </ProductCard>
+
+        <ProductCard
+          product={product}
+          className="bg-dark"
+          style={{ backgroundColor: "#107ec8" }}
+        >
+          <ProductImage className="custom-image" activeClass="holi" />
+          <ProductTitle className="text-white" />
+          <ProductButtons className="custom-buttons" />
         </ProductCard>
       </div>
     </div>
